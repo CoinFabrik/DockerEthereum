@@ -17,18 +17,18 @@ RUN apt-get update && apt full-upgrade -y && \
         wget \
         net-tools
 
-#5-6.Python/pip, TMUX, nano, tmuxp
+#5.Python/pip, TMUX, nano, tmuxp
 	RUN apt install -y  python \
 						python-pip \
 						tmux \
-	 					nano 
-	RUN pip install tmuxp
+	 					nano && \
+	 pip install tmuxp
 
 
 
 #7-14. <NVM>
 	# Replace shell with bash so we can source files
-	RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+	#RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 
 	ENV NVM_DIR /usr/local/nvm
