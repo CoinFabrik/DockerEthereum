@@ -6,6 +6,6 @@ windows:
     - echo start                    # run as a first command in all panes
   panes:
     - shell_command:
-        - cd netstats/eth-netstats
+        - cd /usr/local/nvm/root/eth-netstats
         - grunt all
         - WS_SECRET=superAgente86 npm start

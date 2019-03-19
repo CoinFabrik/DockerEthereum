@@ -1,4 +1,4 @@
-#1-3.
+#1-2.
 FROM leanbase:latest 
 MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 
@@ -7,7 +7,7 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 
 
 
-# 15.Ethereum
+# 2.Ethereum
 	RUN add-apt-repository -y ppa:ethereum/ethereum && \
 		apt-get install ethereum  -y  && \
 		geth version
@@ -15,16 +15,16 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 
 
 
-#16-18. 
+#3-4. 
 	RUN mkdir -p root/ethereum/test
 	WORKDIR  root/ethereum
 
 
-#19.Explorer install
+#5.Explorer install
 	RUN git clone https://github.com/lrawiczNC/explorer.git  && \
 		cd explorer && \
 		npm install 
-#20.Eth-net-Api
+#6.Eth-net-Api
 	RUN git clone https://github.com/cubedro/eth-net-intelligence-api && \
 		cd eth-net-intelligence-api && \
 		npm install 
@@ -32,7 +32,17 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 
 	COPY Genesis.json Genesis.json
 
-#24-25 run Node and Generate DAG by mining
+	COPY /files/* ./
+	RUN mkdir node1
+#extra
+	run chmod 777 start.sh && \
+		chmod 777 stop.sh
+	EXPOSE 8545
+	EXPOSE 8000
+
+
+
+#7-10 run Node and Generate DAG by mining
 	RUN geth --datadir="./test"  init Genesis.json
 	RUN geth 	--rpc \
 				--rpcport 8545 \
@@ -45,18 +55,6 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 		sleep 2 && \
 		echo "personal.newAccount('asd'); miner.start(1); admin.sleepBlocks(10); miner.stop()" | \
 			geth attach ipc:./test/test.ipc
+	#CMD ./start.sh
 
-	COPY /files/* ./
-	RUN mkdir node1
-	#21-23.
-	run chmod 777 start.sh && \
-		chmod 777 stop.sh
-	EXPOSE 8545
-	EXPOSE 8000
-#Levantar el entorno
-#correr Geth y minar
-
-
-
-# Explorer
 

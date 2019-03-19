@@ -11,8 +11,11 @@ RUN     git clone https://github.com/cubedro/eth-netstats && \
         cd eth-netstats && \
         npm install && \
         npm install -g grunt-cli && \
-        grunt all 
+ 		grunt all 
+
 
 
 EXPOSE 3000
+WORKDIR  /usr/local/nvm/root/eth-netstats
+CMD	 WS_SECRET=superAgente86 npm start 
 # WS_SECRET=superAgente86 npm start

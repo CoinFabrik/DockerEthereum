@@ -1,0 +1,20 @@
+session_name: base
+windows:
+- window_name: main
+  layout: tiled
+  shell_command_before:
+    - cd ~/develop                    # run as a first command in all panes
+  panes:
+    - shell_command:           # pane no. 0
+        - echo 0
+        - clear
+    - shell_command:           # pane no. 1
+        - echo 1
+        - clear
+        - htop
+    - shell_command:           # pane no. 2
+        - echo 2
+        - clear
+    - shell_command:           # pane no. 3
+        - echo 3
+        - clear

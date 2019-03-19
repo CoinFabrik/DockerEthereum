@@ -4,25 +4,17 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 ENV LANG C.UTF-8
 
 
+COPY /files/* /usr/local/bin/
 #4. Install base
 RUN apt-get update && apt full-upgrade -y && \
         apt-get install -y -q --no-install-recommends \
         software-properties-common \
-        apt-transport-https \
         build-essential \
-        ca-certificates \
-        curl \
-        git \
-        libssl-dev \
-        wget \
-        net-tools
+        curl 
 
-#5.Python/pip, TMUX, nano, tmuxp
-    RUN apt install -y  python \
-                        python-pip \
-                        tmux \
-                        nano && \
-    pip install tmuxp
+
+
+
 #7-14. <NVM>
         # Replace shell with bash so we can source files
         #RUN rm /bin/sh && ln -s /bin/bash /bin/sh
@@ -43,4 +35,20 @@ RUN apt-get update && apt full-upgrade -y && \
         ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH 
         #13 pm2
         RUN npm install pm2@latest -g
+
 #</NVM>
+#5.Python/pip, TMUX, nano, tmuxp
+    RUN apt install -y  python \
+                        python-pip \
+                        tmux \
+                        nano && \
+    pip install tmuxp
+
+    RUN apt-get install -y -q --no-install-recommends \
+        apt-transport-https \
+        ca-certificates \
+        htop \
+        git \
+        libssl-dev \
+        wget \
+        net-tools
