@@ -3,9 +3,8 @@ windows:
 - window_name: ethstats:3000
   layout: tiled
   shell_command_before:
-    - echo start                    # run as a first command in all panes
+    - cd eth-netstats                    # run as a first command in all panes
   panes:
     - shell_command:
-        - cd /usr/local/nvm/root/eth-netstats
         - grunt all
-        - WS_SECRET=superAgente86 npm start
+        - WS_SECRET=superAgente86 npm start 

@@ -1,8 +1,7 @@
 #1-2.
 FROM leanbase:latest 
 MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
-
-
+ENV LANG C.UTF-8
 
 
 
@@ -30,7 +29,6 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 		npm install 
 
 
-	COPY Genesis.json Genesis.json
 
 	COPY /files/* ./
 	RUN mkdir node1
@@ -39,7 +37,6 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 		chmod 777 stop.sh
 	EXPOSE 8545
 	EXPOSE 8000
-
 
 
 #7-10 run Node and Generate DAG by mining
@@ -55,6 +52,6 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 		sleep 2 && \
 		echo "personal.newAccount('asd'); miner.start(1); admin.sleepBlocks(10); miner.stop()" | \
 			geth attach ipc:./test/test.ipc
-	#CMD ./start.sh
+
 
 

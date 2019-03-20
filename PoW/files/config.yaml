@@ -17,7 +17,7 @@ windows:
         - personal.newAccount("asd")
         #- 1234
         #- 1234
-        - miner.start(1); admin.sleepBlocks(10); miner.stop()
+        - miner.start(1); admin.sleepBlocks(5); miner.stop()
         - personal.listAccounts
 - window_name: explorer:8000
   layout: tiled
