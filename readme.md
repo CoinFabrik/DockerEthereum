@@ -1,4 +1,8 @@
-#Comands
->docker build -t node1  ./Node1/
->docker run -it ethereum
-docker run -p 127.0.0.1:8000:8000 -p 127.0.0.1:8545:8545 -it
+Done
+1.PoW
+2.ethnetstats
+ToDo
+1.Wallet
+2.Conect the nodes
+3.fix the wallet
+4.PoA
