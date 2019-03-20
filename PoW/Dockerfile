@@ -1,7 +1,7 @@
 #1-2.
 FROM leanbase:latest 
 MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
-ENV LANG C.UTF-8
+
 
 
 
@@ -32,6 +32,7 @@ ENV LANG C.UTF-8
 
 	COPY /files/* ./
 	RUN mkdir node1
+	RUN rm -f eth-net-intelligence-api/app.json && mv app.json eth-net-intelligence-api/app.json
 #extra
 	run chmod 777 start.sh && \
 		chmod 777 stop.sh
