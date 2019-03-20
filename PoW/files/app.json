@@ -14,9 +14,9 @@
       "RPC_HOST"        : "localhost",
       "RPC_PORT"        : "8545",
       "LISTENING_PORT"  : "30303",
-      "INSTANCE_NAME"   : "test",
+      "INSTANCE_NAME"   : "Nodo-N",
       "CONTACT_DETAILS" : "",
-      "WS_SERVER"       : "http://172.17.0.3:3000",
+      "WS_SERVER"       : "http://EthernetServer:3000",
       "WS_SECRET"       : "superAgente86",
       "VERBOSITY"       : 2
     }
