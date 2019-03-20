@@ -27,3 +27,11 @@ windows:
     - shell_command:
         - cd explorer
         - npm start
+- window_name: ethstats
+  layout: tiled
+  shell_command_before:
+    - echo start                    # run as a first command in all panes
+  panes:
+    - shell_command:
+        - cd eth-net-intelligence-api
+        - pm2 start app.json

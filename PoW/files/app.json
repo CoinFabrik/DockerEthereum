@@ -16,7 +16,7 @@
       "LISTENING_PORT"  : "30303",
       "INSTANCE_NAME"   : "Nodo-N",
       "CONTACT_DETAILS" : "",
-      "WS_SERVER"       : "http://EthernetServer:3000",
+      "WS_SERVER"       : "http://172.18.0.22:3000",
       "WS_SECRET"       : "superAgente86",
       "VERBOSITY"       : 2
     }
