@@ -1,0 +1,21 @@
+version: '3'
+services:
+  leanbase:
+    build:
+      context: ./base
+      dockerfile: Dockerfile
+  pow:
+    build:
+      context: ./PoW
+      dockerfile: Dockerfile
+  node1:
+    build:
+      context: ./PoW/Node1
+      dockerfile: Dockerfile
+    ports:
+     - "127.0.0.1:8545:8545"
+     - "127.0.0.1:8000:8000"
+    volumes:
+      - ~/share1:/usr/local/nvm/root/ethereum/share2
+    tty: true
+    

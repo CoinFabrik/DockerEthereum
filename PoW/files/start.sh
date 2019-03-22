@@ -1,2 +1,2 @@
 
-tmuxp load config.yaml 
+tmuxp load config.yaml -d

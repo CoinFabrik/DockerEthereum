@@ -1,5 +1,5 @@
 #1-2.
-FROM leanbase:latest 
+FROM docker_leanbase:latest 
 MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 
 
@@ -31,28 +31,25 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 
 
 	COPY /files/* ./
-	RUN mkdir node1
+	RUN mkdir node
 	RUN rm -f eth-net-intelligence-api/app.json && mv app.json eth-net-intelligence-api/app.json
 #extra
-	run chmod 777 start.sh && \
-		chmod 777 stop.sh
+	run chmod +x start.sh && \
+		chmod +x stop.sh
 	EXPOSE 8545
 	EXPOSE 8000
 
 
 #7-10 run Node and Generate DAG by mining
-	RUN geth --datadir="./test"  init Genesis.json
+	RUN geth --datadir="./node"  init Genesis.json
 	RUN geth 	--rpc \
 				--rpcport 8545 \
 		 		--port 30803 \
 		 		--networkid 22 \
-		 		--datadir="./test" \
-		 		--ipcpath="test.ipc" \
+		 		--datadir="./node" \
+		 		--ipcpath="geth.ipc" \
 		 		--rpcaddr "0.0.0.0" \
 		 		--rpccorsdomain "*" & \
 		sleep 2 && \
 		echo "personal.newAccount('asd'); miner.start(1); admin.sleepBlocks(10); miner.stop()" | \
-			geth attach ipc:./test/test.ipc
-
-
-
+			geth attach ipc:./node/geth.ipc

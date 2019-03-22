@@ -19,6 +19,6 @@ EXPOSE 3000
 WORKDIR  /usr/local/nvm/root/
 COPY /files/* ./
 run chmod 777 start.sh
-#CMD	 ./start.sh
+CMD	 ./start.sh
 #CMD bash
 # WS_SECRET=superAgente86 npm start
