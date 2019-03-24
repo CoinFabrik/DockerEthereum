@@ -5,5 +5,5 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 COPY config.yaml config.yaml
 COPY start.sh start.sh
 RUN chmod +x start.sh
-#CMD ./start.sh
-#CMD bash
+CMD ./start.sh
+CMD bash

@@ -1,5 +1,5 @@
 #1-3.
-FROM leanbase:latest 
+FROM docker_leanbase:latest 
 MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 
 
