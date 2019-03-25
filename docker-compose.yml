@@ -30,15 +30,15 @@ services:
      - "127.0.0.1:8545:8545"
      - "127.0.0.1:8000:8000"
     volumes:
-      - ~/share1:/usr/local/nvm/root/ethereum/share2
+      - /share1:/usr/local/nvm/root/ethereum/share2
     tty: true
     stdin_open: true
-  node2:
-    container_name: node2
-    build:
-      context: ./PoW/Node2
-      dockerfile: Dockerfile
-    volumes:
-      - ~/share1:/usr/local/nvm/root/ethereum/share2
-    tty: true
-    stdin_open: true
+#  node2:
+#    container_name: node2
+#    build:
+###      context: ./PoW/Node2
+#      dockerfile: Dockerfile
+#    volumes:
+#      - ~/share1:/usr/local/nvm/root/ethereum/share2
+#    tty: true
+#    stdin_open: true
