@@ -1,0 +1,4 @@
+
+./start.sh
+./deleteNode.sh
+docker attach node2 --detach-keys="ctrl-d"

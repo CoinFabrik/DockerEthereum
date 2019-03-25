@@ -1,1 +1,1 @@
-tmuxp load config.yaml -d
+pm2 start nodo.sh
