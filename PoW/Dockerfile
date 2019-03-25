@@ -34,8 +34,7 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 	RUN mkdir node
 	RUN rm -f eth-net-intelligence-api/app.json && mv app.json eth-net-intelligence-api/app.json
 #extra
-	run chmod +x start.sh && \
-		chmod +x stop.sh
+
 	EXPOSE 8545
 	EXPOSE 8000
 

@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 
 services:
   leanbase:
@@ -11,6 +11,10 @@ services:
     build:
       context: ./ethstat
       dockerfile: Dockerfile
+    networks:
+       # you may set custom IP addresses
+      mynet123:
+        ipv4_address: 172.18.0.8
     ports:
       - "127.0.0.1:3000:3000"
     tty: true
@@ -33,12 +37,11 @@ services:
       - /share1:/usr/local/nvm/root/ethereum/share2
     tty: true
     stdin_open: true
-#  node2:
-#    container_name: node2
-#    build:
-###      context: ./PoW/Node2
-#      dockerfile: Dockerfile
-#    volumes:
-#      - ~/share1:/usr/local/nvm/root/ethereum/share2
-#    tty: true
-#    stdin_open: true
+
+networks:
+  mynet123:
+    driver: bridge
+    ipam:
+      config:
+       - subnet: 172.18.0.0/16
+         gateway: 172.18.0.1
