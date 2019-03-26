@@ -31,7 +31,8 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 
 
 	COPY /files/* ./
-	RUN mkdir node
+	RUN mkdir node && \
+		chmod +x node.sh
 	RUN rm -f eth-net-intelligence-api/app.json && mv app.json eth-net-intelligence-api/app.json
 #extra
 

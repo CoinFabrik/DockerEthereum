@@ -51,4 +51,6 @@ RUN apt-get update && apt full-upgrade -y && \
         git \
         libssl-dev \
         wget \
+        telnet \
+        netcat \
         net-tools

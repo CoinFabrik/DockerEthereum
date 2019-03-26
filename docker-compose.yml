@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   leanbase:
@@ -11,12 +11,12 @@ services:
     build:
       context: ./ethstat
       dockerfile: Dockerfile
-    networks:
+    #networks:
        # you may set custom IP addresses
-      mynet123:
-        ipv4_address: 172.18.0.8
+     # EthereumNet2:
+      #  ipv4_address: "172.18.0.22"
     ports:
-      - "127.0.0.1:3000:3000"
+      - "172.18.0.1:3000:3000"
     tty: true
     stdin_open: true
   pow:
@@ -50,10 +50,3 @@ services:
     tty: true
     stdin_open: true
 
-networks:
-  mynet123:
-    driver: bridge
-    ipam:
-      config:
-       - subnet: 172.18.0.0/16
-         gateway: 172.18.0.1
