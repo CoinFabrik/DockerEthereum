@@ -12,8 +12,8 @@
     {
       "NODE_ENV"        : "production",
       "RPC_HOST"        : "localhost",
-      "RPC_PORT"        : "8545",
-      "LISTENING_PORT"  : "30303",
+      "RPC_PORT"        : "8555",
+      "LISTENING_PORT"  : "30503",
       "INSTANCE_NAME"   : "Nodo-2",
       "CONTACT_DETAILS" : "",
       "WS_SERVER"       : "http://172.18.0.1:3000",

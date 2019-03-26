@@ -31,9 +31,8 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 
 
 	COPY /files/* ./
-	RUN mkdir node && \
-		chmod +x node.sh
-	RUN rm -f eth-net-intelligence-api/app.json && mv app.json eth-net-intelligence-api/app.json
+	RUN mkdir node 
+
 #extra
 
 	EXPOSE 8545
@@ -51,5 +50,5 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 		 		--rpcaddr "0.0.0.0" \
 		 		--rpccorsdomain "*" & \
 		sleep 2 && \
-		echo "personal.newAccount('asd'); miner.start(1); admin.sleepBlocks(10); miner.stop()" | \
+		echo "personal.newAccount('asd'); miner.start(); admin.sleepBlocks(10); miner.stop()" | \
 			geth attach ipc:./node/geth.ipc
