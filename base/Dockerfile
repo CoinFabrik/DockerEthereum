@@ -54,3 +54,4 @@ RUN apt-get update && apt full-upgrade -y && \
         telnet \
         netcat \
         net-tools
+    WORKDIR /home

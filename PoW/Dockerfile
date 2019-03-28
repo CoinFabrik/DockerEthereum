@@ -52,3 +52,4 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 		sleep 2 && \
 		echo "personal.newAccount('asd'); miner.start(); admin.sleepBlocks(10); miner.stop()" | \
 			geth attach ipc:./node/geth.ipc
+	RUN rm -rf node/

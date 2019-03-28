@@ -6,7 +6,7 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 ENV LANG C.UTF-8
 
 #</NVM>
-WORKDIR  root/
+
 RUN     git clone https://github.com/cubedro/eth-netstats && \
         cd eth-netstats && \
         npm install && \
@@ -16,7 +16,7 @@ RUN     git clone https://github.com/cubedro/eth-netstats && \
 
 
 EXPOSE 3000
-WORKDIR  /usr/local/nvm/root/
+
 COPY /files/* ./
 run chmod 777 start.sh
 CMD	 ./start.sh

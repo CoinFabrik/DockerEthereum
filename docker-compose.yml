@@ -17,6 +17,7 @@ services:
       #  ipv4_address: "172.18.0.22"
     ports:
       - "172.18.0.1:3000:3000"
+      - "127.0.0.1:3000:3000"
     tty: true
     stdin_open: true
   pow:
@@ -24,19 +25,19 @@ services:
     build:
       context: ./PoW
       dockerfile: Dockerfile
-
   node1:
     container_name: node1
     build:
       context: ./PoW/Node1
       dockerfile: Dockerfile
     ports:
+     - "127.0.0.1:8545:8545"
      - "172.18.0.1:8545:8545" #rpcPort
      - "172.18.0.1:8546:8546" #webSocket-Port
      - "172.18.0.1:30403:30403" #DiscoveryPort
      - "172.18.0.1:8000:8000" #explorer 
     volumes:
-      - /share1:/usr/local/nvm/root/ethereum/share2
+      - /share1:/home/root/ethereum/share2
     tty: true
     stdin_open: true
   node2:
@@ -46,11 +47,12 @@ services:
       dockerfile: Dockerfile
     ports:
      - "172.18.0.1:8555:8555"
-     - "172.18.0.1:30503:30503" #DiscoveryPort
      - "172.18.0.1:8556:8556"
+     - "172.18.0.1:30503:30503" #DiscoveryPort
      - "172.18.0.1:8001:8000"
     volumes:
-      - /share1:/usr/local/nvm/root/ethereum/share2
+      - /share1:/home/root/ethereum/share2
     tty: true
     stdin_open: true
+ 
 
