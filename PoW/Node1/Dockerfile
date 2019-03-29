@@ -1,5 +1,5 @@
 #1-2.
-FROM docker_pow:latest 
+FROM img_pow:latest 
 MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 # run rm -rf config.yaml
 

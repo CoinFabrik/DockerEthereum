@@ -1,5 +1,5 @@
 #1-2.
-FROM docker_pow:latest 
+FROM img_pow:latest 
 MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 COPY app2.json eth-net-intelligence-api/app.json
 COPY node2.sh node2.sh

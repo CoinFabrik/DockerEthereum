@@ -6,11 +6,13 @@ services:
     build:
       context: ./base
       dockerfile: Dockerfile
+    image: img_leanbase
   ethstat:
     container_name: ethstat
     build:
       context: ./ethstat
       dockerfile: Dockerfile
+    image: img_ethstat
     #networks:
        # you may set custom IP addresses
      # EthereumNet2:
@@ -25,11 +27,13 @@ services:
     build:
       context: ./PoW
       dockerfile: Dockerfile
+    image: img_pow
   node1:
     container_name: node1
     build:
       context: ./PoW/Node1
       dockerfile: Dockerfile
+    image: img_node1
     ports:
      - "127.0.0.1:8545:8545"
      - "172.18.0.1:8545:8545" #rpcPort
@@ -45,6 +49,7 @@ services:
     build:
       context: ./PoW/Node2
       dockerfile: Dockerfile
+    image: img_node2
     ports:
      - "172.18.0.1:8555:8555"
      - "172.18.0.1:8556:8556"
