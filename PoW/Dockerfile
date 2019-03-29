@@ -39,17 +39,20 @@ MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
 	EXPOSE 8000
 
 
+
+
+
+
+
+
 #7-10 run Node and Generate DAG by mining
 	RUN geth --datadir="./node"  init Genesis.json
-	RUN geth 	--rpc \
-				--rpcport 8545 \
-		 		--port 30803 \
-		 		--networkid 22 \
-		 		--datadir="./node" \
-		 		--ipcpath="geth.ipc" \
-		 		--rpcaddr "0.0.0.0" \
-		 		--rpccorsdomain "*" & \
-		sleep 2 && \
-		echo "personal.newAccount('asd'); miner.start(); admin.sleepBlocks(10); miner.stop()" | \
-			geth attach ipc:./node/geth.ipc
+	RUN pm2 start node.sh && \
+	sleep 4 && \
+	echo "personal.newAccount('asd'); miner.start(); admin.sleepBlocks(10); miner.stop()" | \
+	geth attach ipc:./node/geth.ipc  
+
+	#RUN	echo "personal.newAccount('asd'); miner.start(); admin.sleepBlocks(10); miner.stop()" | \
+	#RUN	pm2 stop node
+
 	RUN rm -rf node/
