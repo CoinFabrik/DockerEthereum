@@ -5,7 +5,7 @@
 
 `git clone https://github.com/lrawiczNC/EthereumDocker.git`
 
-2.Create the images and run the envierment
+2.Create the images and run the envierment (you can use the next command as a restart)
 
 `sudo ./start.sh`
 
