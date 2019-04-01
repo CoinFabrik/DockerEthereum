@@ -1,6 +1,10 @@
+start and restart with:
+	./start.sh
+delete the nodes with:
+	./deleteNode.sh
+
+
 docker-compose up
-
-
 
 
 
@@ -16,15 +20,3 @@ and
 
 
 
-Done
-
-1.PoW
-2.ethnetstats
-3.MetaMask 
-4.Remix (need test)
-5. docker-compose 
-6.Conect the nodes
-ToDo
-1.Wallet
-3.fix the wallet
-4.PoA

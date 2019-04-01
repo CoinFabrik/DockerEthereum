@@ -1,2 +1,2 @@
 docker rm -f node1 node2
-docker rmi -f docker_node1 docker_node2
+docker rmi -f img_node1 img_node2
