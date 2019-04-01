@@ -1,2 +1,2 @@
 docker exec -it Node1 sh \
--c 'echo "miner.start()" | geth attach ipc:./node/geth.ipc'
+-c 'echo "miner.stop()" | geth attach ipc:./node/geth.ipc'
