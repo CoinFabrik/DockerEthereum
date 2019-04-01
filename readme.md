@@ -28,3 +28,5 @@ start and stop mining with
 
 `sudo ./scripts/MinerStop.sh`
 
+
+
