@@ -1,17 +1,30 @@
-# Docker to Regtest
-## Instalation
-
-1.Clone the Repo
-
-`git clone https://github.com/lrawiczNC/EthereumDocker.git`
-
-2.Create the images and run the envierment (you can use the next command as a restart)
+start and restart with:
 
 `sudo ./start.sh`
 
-3. visit http://localhost:3000 in your borwser of choice. You will enter to Ethstat to monit the nodes that are running as containers.
+and visit http://localhost:3000
+
+list the containers
+
+`sudo docker ps`
+
+attach the nodes with
+
+`sudo docker attach <<ContainerName>>`
+
+or
+
+`sudo docker exec -it <<ContainerName>> /bin/bash`
 
 
-4. to see what container are runing use `sudo docker ps` 
+detach with
+`Ctrl + P, Ctrl + Q`
 
-Now you can conect  MetaMask with node1 using localhost:8545 and after that you can use remix to upload SmartContracts using MetaMask as a bridge
+
+
+start and stop mining with
+
+`sudo ./scripts/MinerStart.sh`
+
+`sudo ./scripts/MinerStop.sh`
+
