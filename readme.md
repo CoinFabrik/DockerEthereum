@@ -13,3 +13,5 @@
 
 
 4. to see what container are runing use `sudo docker ps` 
+
+Now you can conect  MetaMask with node1 using localhost:8545 and after that you can use remix to upload SmartContracts using MetaMask as a bridge
