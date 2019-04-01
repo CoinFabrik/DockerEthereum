@@ -1,22 +1,10 @@
-start and restart with:
-	./start.sh
-delete the nodes with:
-	./deleteNode.sh
+# Docker to Regtest
+## Instalation
 
+1.Clone the Repo
+`git clone <code>`
 
-docker-compose up
+2.Create the images and run the envierment
+`./start.sh`
 
-
-
-
-
-
-you can connect with them with
-'docker attach node1 --detach-keys="ctrl-d"'	
-	or
-'docker attach node2 --detach-keys="ctrl-d"'
-and
-'"geth attach ipc:./node1/geth1.ipc"'
-
-
-
+then visit http://localhost:3000 in your borwser of choice. You will enter to Ethstat to monit the nodes that are running as containers.
