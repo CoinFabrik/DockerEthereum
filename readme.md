@@ -7,6 +7,9 @@
 
 2.Create the images and run the envierment
 
-`./start.sh`
+`sudo ./start.sh`
 
-then visit http://localhost:3000 in your borwser of choice. You will enter to Ethstat to monit the nodes that are running as containers.
+3. visit http://localhost:3000 in your borwser of choice. You will enter to Ethstat to monit the nodes that are running as containers.
+
+
+4. to see what container are runing use `sudo docker ps` 
