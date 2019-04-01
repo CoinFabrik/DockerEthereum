@@ -4,13 +4,13 @@ services:
   leanbase:
     container_name: leanbase
     build:
-      context: ./base
+      context: ./DockerFiles/base
       dockerfile: Dockerfile
     image: img_leanbase
   ethstat:
     container_name: ethstat
     build:
-      context: ./ethstat
+      context: ./DockerFiles/ethstat
       dockerfile: Dockerfile
     image: img_ethstat
     #networks:
@@ -25,13 +25,13 @@ services:
   pow:
     container_name: pow
     build:
-      context: ./PoW
+      context: ./DockerFiles/PoW
       dockerfile: Dockerfile
     image: img_pow
   node1:
     container_name: node1
     build:
-      context: ./PoW/Node1
+      context: ./DockerFiles/PoW/Node1
       dockerfile: Dockerfile
     image: img_node1
     ports:
@@ -47,7 +47,7 @@ services:
   node2:
     container_name: node2
     build:
-      context: ./PoW/Node2
+      context: ./DockerFiles/PoW/Node2
       dockerfile: Dockerfile
     image: img_node2
     ports:
