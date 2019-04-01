@@ -2,7 +2,7 @@
 ## Instalation
 
 1.Clone the Repo
-`git clone <code>`
+`git clone https://github.com/lrawiczNC/EthereumDocker.git`
 
 2.Create the images and run the envierment
 `./start.sh`
