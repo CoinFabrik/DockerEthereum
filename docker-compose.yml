@@ -19,7 +19,8 @@ services:
       #  ipv4_address: "172.18.0.22"
     ports:
       - "172.18.0.1:3000:3000"
-      - "127.0.0.1:3000:3000"
+      - "127.0.0.1:3000:3000" #EthStat
+      - "127.0.0.1:8080:8080" #Remix
     tty: true
     stdin_open: true
   pow:
@@ -39,7 +40,6 @@ services:
      - "172.18.0.1:8545:8545" #rpcPort
      - "172.18.0.1:8546:8546" #webSocket-Port
      - "172.18.0.1:30403:30403" #DiscoveryPort
-     - "172.18.0.1:8000:8000" #explorer 
     volumes:
       - /share1:/home/root/ethereum/share2
     tty: true
@@ -54,7 +54,6 @@ services:
      - "172.18.0.1:8555:8555"
      - "172.18.0.1:8556:8556"
      - "172.18.0.1:30503:30503" #DiscoveryPort
-     - "172.18.0.1:8001:8000"
     volumes:
       - /share1:/home/root/ethereum/share2
     tty: true
