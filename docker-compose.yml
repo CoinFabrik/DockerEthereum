@@ -8,6 +8,8 @@ services:
       dockerfile: Dockerfile
     image: img_leanbase
   ethstat:
+    depends_on:
+      - leanbase
     container_name: Ethstat
     build:
       context: ./DockerFiles/ethstat
@@ -25,12 +27,16 @@ services:
     stdin_open: true
   pow:
     container_name: pow
+    depends_on:
+      - leanbase
     build:
       context: ./DockerFiles/PoW
       dockerfile: Dockerfile
     image: img_pow
   node1:
     container_name: Node1
+    depends_on:
+      - pow
     build:
       context: ./DockerFiles/PoW/Node1
       dockerfile: Dockerfile
@@ -46,6 +52,8 @@ services:
     stdin_open: true
   node2:
     container_name: Node2
+    depends_on:
+      - pow
     build:
       context: ./DockerFiles/PoW/Node2
       dockerfile: Dockerfile
