@@ -1,7 +1,5 @@
-#1-2.
 FROM img_pow:latest 
 MAINTAINER Lean <leandro.rawicz@coinfabrik.com>
-# run rm -rf config.yaml
 
 COPY formatADDPEER.py formatADDPEER.py
 COPY app1.json eth-net-intelligence-api/app.json
@@ -24,5 +22,3 @@ CMD	cp nodeinfo.txt /home/root/ethereum/share2/node1.txt && \
 	echo "entrar" && \
 	echo "miner.start(); admin.sleepBlocks(10); miner.stop()" | geth attach ipc:./node/geth.ipc  & \
 	bash 
-
-
