@@ -1,3 +1,4 @@
+#!/bin/bash
 EtherSend=$1
 Addr=$2
 
